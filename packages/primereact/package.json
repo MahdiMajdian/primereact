@@ -1,0 +1,113 @@
+{
+    "name": "primereact",
+    "version": "12.0.0",
+    "author": "PrimeTek Informatics",
+    "description": "PrimeReact is an open source UI library for React featuring a rich set of 80+ components, a theme designer, various theme alternatives such as Material, Bootstrap, Tailwind, premium templates and professional support. In addition, it integrates with PrimeBlock, which has 470+ ready to use UI blocks to build spectacular applications in no time.",
+    "homepage": "https://primereact.org/",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/primefaces/primereact.git",
+        "directory": "packages/primereact"
+    },
+    "bugs": {
+        "url": "https://github.com/primefaces/primereact/issues"
+    },
+    "keywords": [
+        "primereact",
+        "react",
+        "ui library",
+        "component library",
+        "material",
+        "bootstrap",
+        "fluent",
+        "tailwind",
+        "unstyled",
+        "passthrough"
+    ],
+    "unpkg": "umd/primereact.min.js",
+    "jsdelivr": "umd/primereact.min.js",
+    "exports": {
+        "./badge": "./src/badge/Badge.js",
+        "./csstransition": "./src/csstransition/CSSTransition.js",
+        "./select": "./src/select/Select.js",
+        "./dropdown": "./src/dropdown/Dropdown.js",
+        "./iconfield": "./src/iconfield/IconField.js",
+        "./inputicon": "./src/inputicon/InputIcon.js",
+        "./floatlabel": "./src/floatlabel/FloatLabel.js",
+        "./virtualscroller": "./src/virtualscroller/VirtualScroller.js",
+        "./overlaybadge": "./src/overlaybadge/OverlayBadge.js",
+        "./avatar": "./src/avatar/Avatar.js",
+        "./avatargroup": "./src/avatargroup/AvatarGroup.js",
+        "./styleclass": "./src/styleclass/StyleClass.js",
+        "./selectbutton": "./src/selectbutton/SelectButton.js",
+        "./togglebutton": "./src/togglebutton/ToggleButton.js",
+        "./skeleton": "./src/skeleton/Skeleton.js",
+        "./checkbox": "./src/checkbox/Checkbox.js",
+        "./radiobutton": "./src/radiobutton/RadioButton.js",
+        "./accordion": "./src/accordion/Accordion.js",
+        "./chip": "./src/chip/Chip.js",
+        "./button": "./src/button/Button.js",
+        "./rating": "./src/rating/Rating.js",
+        "./tag": "./src/tag/Tag.js",
+        "./card": "./src/card/Card.js",
+        "./inplace": "./src/inplace/Inplace.js",
+        "./buttongroup": "./src/buttongroup/ButtonGroup.js",
+        "./terminalservice": "./src/terminalservice/TerminalService.js",
+        "./progressbar": "./src/progressbar/ProgressBar.js",
+        "./progressspinner": "./src/progressspinner/ProgressSpinner.js",
+        "./scrolltop": "./src/scrolltop/ScrollTop.js",
+        "./toast": "./src/toast/Toast.js",
+        "./terminal": "./src/terminal/Terminal.js",
+        "./toggleswitch": "./src/toggleswitch/ToggleSwitch.js",
+        "./slider": "./src/slider/Slider.js",
+        "./fluid": "./src/fluid/Fluid.js",
+        "./inputtext": "./src/inputtext/InputText.js",
+        "./keyfilter": "./src/keyfilter/KeyFilter.js",
+        "./knob": "./src/knob/Knob.js",
+        "./panel": "./src/panel/Panel.js",
+        "./portal": "./src/portal/Portal.js",
+        "./ripple": "./src/ripple/Ripple.js",
+        "./tooltip": "./src/tooltip/Tooltip.js",
+        "./metergroup": "./src/metergroup/MeterGroup.js",
+        "./divider": "./src/divider/Divider.js",
+        "./fieldset": "./src/fieldset/Fieldset.js",
+        "./column": "./src/column/Column.js",
+        "./datatable": "./src/datatable/DataTable.js",
+        "./overlayservice": "./src/overlayservice/OverlayService.js",
+        "./blockui": "./src/blockui/BlockUI.js",
+        "./utils": "./src/utils/Utils.js",
+        "./*": "./*"
+    },
+    "publishConfig": {
+        "exports": {
+            "./*": {
+                "types": "./*/index.d.ts",
+                "import": "./*/index.mjs"
+            }
+        },
+        "directory": "dist",
+        "linkDirectory": false,
+        "access": "public"
+    },
+    "scripts": {
+        "build": "NODE_ENV=production INPUT_DIR=src/ OUTPUT_DIR=dist/ pnpm run build:package",
+        "build:package": "pnpm run build:prebuild && pnpm run build:api && rollup -c && pnpm run build:postbuild",
+        "build:api": "node ./scripts/build-api.js",
+        "build:prebuild": "node ./scripts/prebuild.mjs",
+        "build:postbuild": "node ./scripts/postbuild.mjs",
+        "dev:link": "pnpm link --global && npm link"
+    },
+    "dependencies": {
+        "@primeuix/styled": "catalog:",
+        "@primeuix/utils": "catalog:",
+        "@primereact/core": "workspace:*",
+        "@primereact/hooks": "workspace:*",
+        "@primereact/icons": "workspace:*",
+        "@primereact/styles": "workspace:*",
+        "react-transition-group": "^4.4.2"
+    },
+    "engines": {
+        "node": ">=12.11.0"
+    }
+}
